@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'reservation'
+    'restaurant'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +77,15 @@ WSGI_APPLICATION = 'little_lemon_restaurant.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'LittleLemon',  
+        'USER': 'root',  
+        'PASSWORD': 'Lmd10231979!',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',  
+        'OPTIONS': {  
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        } 
     }
 }
 
@@ -117,8 +124,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'reservation/static/'
-STAICFILES_DIRS = ["reservation/static"]
+STATIC_URL = 'restaurant/static/'
+STAICFILES_DIRS = ["restaurant/static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
